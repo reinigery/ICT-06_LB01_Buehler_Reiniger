@@ -1,0 +1,16 @@
+header {
+    height: 75px;
+    background-color: rgb(65, 135, 200);
+    margin-bottom: 20px;
+}
+
+header img {
+    margin: 7.5px;
+    height: 55px;
+    width: auto;
+}
+
+header h1 {
+ font-size: 160%;
+ position: relative;
+}

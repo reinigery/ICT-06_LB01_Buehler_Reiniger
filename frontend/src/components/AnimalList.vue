@@ -16,11 +16,11 @@
       </thead>
       <tbody>
         <tr v-for="item in items" :key="item.animal_id">
-          <td>{{ item.animal_name }}</td>
-          <td>{{ item.animal_species }}</td>
-          <td>{{ item.animal_yearofbirth }}</td>
-          <td>{{ item.animal_castrated }}</td>
-          <td>{{ item.animal_character }}</td>
+          <td>{{ item.animalName }}</td>
+          <td>{{ item.animalSpecies }}</td>
+          <td>{{ item.animalYearofbirth }}</td>
+          <td>{{ item.animalCastrated }}</td>
+          <td>{{ item.animalCharacter }}</td>
           <td class="has-text-centered">
             <router-link
               :to="{ name: 'Edit', params: { id: item.animal_id } }"
@@ -69,7 +69,7 @@ export default {
     // Delete Animal
     async deleteAnimal(id) {
       try {
-        await axios.delete(`http://localhost:5000/products/${id}`);
+        await axios.delete(`http://localhost:5000/animals/${id}`);
         this.getAnimals();
       } catch (err) {
         console.log(err);
