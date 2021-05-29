@@ -3,7 +3,7 @@ import db from "../config/database.js";
  
 // Get All Animals
 export const getAnimals = (result) => {
-    db.query("SELECT * FROM animal", (err, results) => {             
+    db.query("SELECT * FROM animals", (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -15,7 +15,7 @@ export const getAnimals = (result) => {
  
 // Get Single Animal
 export const getAnimaltById = (id, result) => {
-    db.query("SELECT * FROM animal WHERE animal_id = ?", [id], (err, results) => {             
+    db.query("SELECT * FROM animals WHERE id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -39,7 +39,7 @@ export const insertAnimal = (data, result) => {
  
 // Update Animal to Database
 export const updateAnimalById = (data, id, result) => {
-    db.query("UPDATE animal SET animal_name = ?, animal_price = ? WHERE animal_id = ?", [data.animal_name, data.animal_price, id], (err, results) => {             
+    db.query("UPDATE animals SET animalName = ?, animalSpecies = ? WHERE id = ?", [data.animalName, data.animalSpecies, id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -51,7 +51,7 @@ export const updateAnimalById = (data, id, result) => {
  
 // Delete Animal to Database
 export const deleteAnimalById = (id, result) => {
-    db.query("DELETE FROM animal WHERE animal_id = ?", [id], (err, results) => {             
+    db.query("DELETE FROM animals WHERE id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
