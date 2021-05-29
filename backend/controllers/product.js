@@ -1,9 +1,9 @@
-// Import function from Product Model
-import { getProducts, getProductById, insertProduct, updateProductById, deleteProductById } from "../models/productModel.js";
+// Import function from Animal Model
+import { getAnimals, getAnimalById, insertAnimal, updateAnimalById, deleteAnimalById } from "../models/animalModel.js";
  
-// Get All Products
-export const showProducts = (req, res) => {
-    getProducts((err, results) => {
+// Get All Animals
+export const showAnimals = (req, res) => {
+    getAnimals((err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -12,9 +12,9 @@ export const showProducts = (req, res) => {
     });
 }
  
-// Get Single Product 
-export const showProductById = (req, res) => {
-    getProductById(req.params.id, (err, results) => {
+// Get Single Animal 
+export const showAnimalById = (req, res) => {
+    getAnimaltById(req.params.id, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -23,10 +23,10 @@ export const showProductById = (req, res) => {
     });
 }
  
-// Create New Product
-export const createProduct = (req, res) => {
+// Create New Animal
+export const createAnimal = (req, res) => {
     const data = req.body;
-    insertProduct(data, (err, results) => {
+    insertAnimal(data, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -35,11 +35,11 @@ export const createProduct = (req, res) => {
     });
 }
  
-// Update Product
-export const updateProduct = (req, res) => {
+// Update Animal
+export const updateAnimal = (req, res) => {
     const data  = req.body;
     const id    = req.params.id;
-    updateProductById(data, id, (err, results) => {
+    updateAnimalById(data, id, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -48,10 +48,10 @@ export const updateProduct = (req, res) => {
     });
 }
  
-// Delete Product
-export const deleteProduct = (req, res) => {
+// Delete Animal
+export const deleteAnimal = (req, res) => {
     const id = req.params.id;
-    deleteProductById(id, (err, results) => {
+    deleteAnimalById(id, (err, results) => {
         if (err){
             res.send(err);
         }else{

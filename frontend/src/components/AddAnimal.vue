@@ -6,20 +6,8 @@
         <input
           class="input"
           type="text"
-          placeholder="Product Name"
-          v-model="productName"
-        />
-      </div>
-    </div>
- 
-    <div class="field">
-      <label class="label">Price</label>
-      <div class="control">
-        <input
-          class="input"
-          type="text"
-          placeholder="Price"
-          v-model="productPrice"
+          placeholder="Animal Name"
+          v-model="animalName"
         />
       </div>
     </div>
@@ -31,6 +19,40 @@
         <option value="dog">dog</option>
         <option value="cat">cat</option>
       </select>
+      </div>
+    </div>
+ 
+    <div class="field">
+      <label class="label">Year of Birth</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="Year of Birth"
+          v-model="yearofbirth"
+        />
+      </div>
+    </div>
+
+    <div class="field">
+    <label class="label">Castrated</label>
+      <div class="control">
+      <select class="input">
+        <option value="dog">Yes</option>
+        <option value="cat">No</option>
+      </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Character</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="Character"
+          v-model="animalCharacter"
+        />
       </div>
     </div>
  

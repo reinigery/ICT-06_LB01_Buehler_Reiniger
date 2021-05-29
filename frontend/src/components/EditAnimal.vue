@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="field">
-      <label class="label">Product Name</label>
+      <label class="label">Animal Name</label>
       <div class="control">
         <input
           class="input"
           type="text"
-          placeholder="Product Name"
-          v-model="productName"
+          placeholder="Animal Name"
+          v-model="animalName"
         />
       </div>
     </div>
@@ -19,12 +19,12 @@
           class="input"
           type="text"
           placeholder="Price"
-          v-model="productPrice"
+          v-model="animalPrice"
         />
       </div>
     </div>
     <div class="control">
-      <button class="button is-success" @click="updateProduct">UPDATE</button>
+      <button class="button is-success" @click="updateAnimal">UPDATE</button>
     </div>
   </div>
 </template>
@@ -34,42 +34,42 @@
 import axios from "axios";
  
 export default {
-  name: "EditProduct",
+  name: "EditAnimal",
   data() {
     return {
-      productName: "",
-      productPrice: "",
+      animalName: "",
+      animalPrice: "",
     };
   },
   created: function () {
-    this.getProductById();
+    this.getAnimalById();
   },
   methods: {
-    // Get Product By Id
-    async getProductById() {
+    // Get Animal By Id
+    async getAnimaltById() {
       try {
         const response = await axios.get(
-          `http://localhost:5000/products/${this.$route.params.id}`
+          `http://localhost:5000/animals/${this.$route.params.id}`
         );
-        this.productName = response.data.product_name;
-        this.productPrice = response.data.product_price;
+        this.animalName = response.data.animal_name;
+        this.animalPrice = response.data.animal_price;
       } catch (err) {
         console.log(err);
       }
     },
  
-    // Update product
-    async updateProduct() {
+    // Update animal
+    async updateAnimal() {
       try {
         await axios.put(
-          `http://localhost:5000/products/${this.$route.params.id}`,
+          `http://localhost:5000/animals/${this.$route.params.id}`,
           {
-            product_name: this.productName,
-            product_price: this.productPrice,
+            animal_name: this.animalName,
+            animal_price: this.animalPrice,
           }
         );
-        this.productName = "";
-        this.productPrice = "";
+        this.animalName = "";
+        this.animalPrice = "";
         this.$router.push("/");
       } catch (err) {
         console.log(err);

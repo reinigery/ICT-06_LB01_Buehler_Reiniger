@@ -6,24 +6,30 @@
     <table class="table is-striped is-bordered mt-2 is-fullwidth">
       <thead>
         <tr>
-          <th>Product Name</th>
-          <th>Price</th>
+          <th>Animal Name</th>
+          <th>Species</th>
+          <th>Age</th>
+          <th>Castrated</th>
+          <th>Character</th>          
           <th class="has-text-centered">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in items" :key="item.product_id">
-          <td>{{ item.product_name }}</td>
-          <td>{{ item.product_price }}</td>
+        <tr v-for="item in items" :key="item.animal_id">
+          <td>{{ item.animal_name }}</td>
+          <td>{{ item.animal_species }}</td>
+          <td>{{ item.animal_yearofbirth }}</td>
+          <td>{{ item.animal_castrated }}</td>
+          <td>{{ item.animal_character }}</td>
           <td class="has-text-centered">
             <router-link
-              :to="{ name: 'Edit', params: { id: item.product_id } }"
+              :to="{ name: 'Edit', params: { id: item.animal_id } }"
               class="button is-info is-small"
               >Edit</router-link
             >
             <a
               class="button is-danger is-small"
-              @click="deleteProduct(item.product_id)"
+              @click="deleteAnimal(item.animal_id)"
               >Delete</a
             >
           </td>
@@ -38,7 +44,7 @@
 import axios from "axios";
  
 export default {
-  name: "ProductList",
+  name: "AnimalList",
   data() {
     return {
       items: [],
@@ -46,25 +52,25 @@ export default {
   },
  
   created() {
-    this.getProducts();
+    this.getAnimals();
   },
  
   methods: {
-    // Get All Products
-    async getProducts() {
+    // Get All Animals
+    async getAnimals() {
       try {
-        const response = await axios.get("http://localhost:5000/products");
+        const response = await axios.get("http://localhost:5000/animals");
         this.items = response.data;
       } catch (err) {
         console.log(err);
       }
     },
  
-    // Delete Product
-    async deleteProduct(id) {
+    // Delete Animal
+    async deleteAnimal(id) {
       try {
         await axios.delete(`http://localhost:5000/products/${id}`);
-        this.getProducts();
+        this.getAnimals();
       } catch (err) {
         console.log(err);
       }

@@ -1,9 +1,9 @@
 // import connection
 import db from "../config/database.js";
  
-// Get All Products
-export const getProducts = (result) => {
-    db.query("SELECT * FROM product", (err, results) => {             
+// Get All Animals
+export const getAnimals = (result) => {
+    db.query("SELECT * FROM animal", (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -13,9 +13,9 @@ export const getProducts = (result) => {
     });   
 }
  
-// Get Single Product
-export const getProductById = (id, result) => {
-    db.query("SELECT * FROM product WHERE product_id = ?", [id], (err, results) => {             
+// Get Single Animal
+export const getAnimaltById = (id, result) => {
+    db.query("SELECT * FROM animal WHERE animal_id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -25,9 +25,9 @@ export const getProductById = (id, result) => {
     });   
 }
  
-// Insert Product to Database
-export const insertProduct = (data, result) => {
-    db.query("INSERT INTO product SET ?", [data], (err, results) => {             
+// Insert Animal to Database
+export const insertAnimal = (data, result) => {
+    db.query("INSERT INTO Animal SET ?", [data], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -37,9 +37,9 @@ export const insertProduct = (data, result) => {
     });   
 }
  
-// Update Product to Database
-export const updateProductById = (data, id, result) => {
-    db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
+// Update Animal to Database
+export const updateAnimalById = (data, id, result) => {
+    db.query("UPDATE animal SET animal_name = ?, animal_price = ? WHERE animal_id = ?", [data.animal_name, data.animal_price, id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -49,9 +49,9 @@ export const updateProductById = (data, id, result) => {
     });   
 }
  
-// Delete Product to Database
-export const deleteProductById = (id, result) => {
-    db.query("DELETE FROM product WHERE product_id = ?", [id], (err, results) => {             
+// Delete Animal to Database
+export const deleteAnimalById = (id, result) => {
+    db.query("DELETE FROM animal WHERE animal_id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
