@@ -8,7 +8,7 @@
         <tr>
           <th>Animal Name</th>
           <th>Species</th>
-          <th>Age</th>
+          <th>Year of Birth</th>
           <th>Castrated</th>
           <th>Character</th>          
           <th class="has-text-centered">Actions</th>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="field">
-      <label class="label">Animal Name</label>
+      <label class="label">Name</label>
       <div class="control">
         <input
           class="input"
@@ -10,39 +10,43 @@
           v-model="animalName"
         />
       </div>
-    </div>
+    </div>  
 
-    <div class="field">
-    <label class="label">Choose a species</label>
+     <div class="field">
+      <label class="label">Species</label>
       <div class="control">
-      <select class="input">
-        <option value="dog">dog</option>
-        <option value="cat">cat</option>
-      </select>
+        <input
+          class="input"
+          type="text"
+          placeholder="dog or cat"
+          v-model="animalSpecies"
+        />
       </div>
-    </div>
+    </div>  
  
-    <div class="field">
+ <div class="field">
       <label class="label">Year of Birth</label>
       <div class="control">
         <input
           class="input"
           type="text"
-          placeholder="Year of Birth"
-          v-model="yearofbirth"
+          placeholder="jjjj"
+          v-model="animalYearofbirth"
         />
       </div>
-    </div>
+    </div>  
 
-    <div class="field">
-    <label class="label">Castrated</label>
+ <div class="field">
+      <label class="label">Castrated</label>
       <div class="control">
-      <select class="input">
-        <option value="dog">Yes</option>
-        <option value="cat">No</option>
-      </select>
+        <input
+          class="input"
+          type="text"
+          placeholder="yes or no"
+          v-model="animalCastrated"
+        />
       </div>
-    </div>
+    </div>  
 
     <div class="field">
       <label class="label">Character</label>
@@ -50,14 +54,14 @@
         <input
           class="input"
           type="text"
-          placeholder="Character"
+          placeholder="describe here the animals character"
           v-model="animalCharacter"
         />
       </div>
     </div>
  
     <div class="control">
-      <button class="button is-success" @click="saveProduct">SAVE</button>
+      <button class="button is-success" @click="saveAnimal">SAVE</button>
     </div>
   </div>
 </template>
@@ -67,23 +71,32 @@
 import axios from "axios";
  
 export default {
-  name: "AddProduct",
+  name: "AddAnimal",
   data() {
     return {
-      productName: "",
-      productPrice: "",
+      animalName: "",
+      animalSpecies: "",
+      animalYearofbirth: "",
+      animalCastrated: "",
+      animalCharacter: "",
     };
   },
   methods: {
-    // Create New product
-    async saveProduct() {
+    // Add New Animal
+    async saveAnimal() {
       try {
-        await axios.post("http://localhost:5000/products", {
-          product_name: this.productName,
-          product_price: this.productPrice,
+        await axios.post("http://localhost:5000/animals", {
+          animal_name: this.animalName,
+          animal_species: this.animalSpecies,
+          animal_yearofbirth: this.animalYearofbirth,
+          animal_castrated: this.animalCastrated,
+          animal_character: this.animalCharacter,
         });
-        this.productName = "";
-        this.productPrice = "";
+        this.animalName = "";
+        this.animalSpecies = "";
+        this.animalYearofbirth = "";
+        this.animalCastrated = "";
+        this.animalCharacter = "";
         this.$router.push("/");
       } catch (err) {
         console.log(err);

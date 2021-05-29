@@ -1,28 +1,66 @@
 <template>
   <div>
+
     <div class="field">
-      <label class="label">Animal Name</label>
+      <label class="label">Name</label>
       <div class="control">
         <input
           class="input"
           type="text"
-          placeholder="Animal Name"
+          placeholder="animal name"
           v-model="animalName"
         />
       </div>
     </div>
  
     <div class="field">
-      <label class="label">Price</label>
+      <label class="label">Species</label>
       <div class="control">
         <input
           class="input"
           type="text"
-          placeholder="Price"
-          v-model="animalPrice"
+          placeholder="cat or dog"
+          v-model="animalSpecies"
         />
       </div>
     </div>
+
+    <div class="field">
+      <label class="label">Year of Birth</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="jjjj"
+          v-model="animalYearofbirth"
+        />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Castrated</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="yes or no"
+          v-model="animalCastrated"
+        />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Character</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="describe here the animals character"
+          v-model="animalCharacter"
+        />
+      </div>
+    </div>
+
     <div class="control">
       <button class="button is-success" @click="updateAnimal">UPDATE</button>
     </div>
@@ -38,7 +76,10 @@ export default {
   data() {
     return {
       animalName: "",
-      animalPrice: "",
+      animalSpecies: "",
+      animalYearofbirth: "",
+      animalCastrated: "",
+      animalCharacter: ""
     };
   },
   created: function () {
@@ -52,7 +93,10 @@ export default {
           `http://localhost:5000/animals/${this.$route.params.id}`
         );
         this.animalName = response.data.animal_name;
-        this.animalPrice = response.data.animal_price;
+        this.animalSpecies = response.data.animal_species;
+        this.animalYearofbirth = response.data.animal_yearofbirth;
+        this.animalCastrated = response.data.animal_castrated;
+        this.animalCharacter = response.data.animal_character;
       } catch (err) {
         console.log(err);
       }
@@ -65,11 +109,17 @@ export default {
           `http://localhost:5000/animals/${this.$route.params.id}`,
           {
             animal_name: this.animalName,
-            animal_price: this.animalPrice,
+            animal_species: this.animalSpecies,
+            animal_yearofbirth: this.animalYearofbirth,
+            animal_castrated: this.animalCastrated,
+            animal_character: this.animalCharacter,
           }
         );
         this.animalName = "";
-        this.animalPrice = "";
+        this.animalSpecies = "";
+        this.animalYearofbirth = "";
+        this.animalCastrated = "";
+        this.animalCharacter = "";
         this.$router.push("/");
       } catch (err) {
         console.log(err);
