@@ -14,7 +14,7 @@ export const getAnimals = (result) => {
 }
  
 // Get Single Animal
-export const getAnimaltById = (id, result) => {
+export const getAnimalById = (id, result) => {
     db.query("SELECT * FROM animals WHERE id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
