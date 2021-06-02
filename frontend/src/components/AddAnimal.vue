@@ -86,11 +86,11 @@ export default {
     async saveAnimal() {
       try {
         await axios.post("http://localhost:5000/animals", {
-          animal_name: this.animalName,
-          animal_species: this.animalSpecies,
-          animal_yearofbirth: this.animalYearofbirth,
-          animal_castrated: this.animalCastrated,
-          animal_character: this.animalCharacter,
+          animalName: this.animalName,
+          animalSpecies: this.animalSpecies,
+          animalYearofbirth: this.animalYearofbirth,
+          animalCastrated: this.animalCastrated,
+          animalCharacter: this.animalCharacter,
         });
         this.animalName = "";
         this.animalSpecies = "";

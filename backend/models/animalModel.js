@@ -27,7 +27,7 @@ export const getAnimalById = (id, result) => {
  
 // Insert Animal to Database
 export const insertAnimal = (data, result) => {
-    db.query("INSERT INTO Animal SET ?", [data], (err, results) => {             
+    db.query("INSERT INTO animals SET ?", [data], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -39,7 +39,7 @@ export const insertAnimal = (data, result) => {
  
 // Update Animal to Database
 export const updateAnimalById = (data, id, result) => {
-    db.query("UPDATE animals SET animalName = ?, animalSpecies = ? WHERE id = ?", [data.animalName, data.animalSpecies, id], (err, results) => {             
+    db.query("UPDATE animals SET animalName = ?, animalSpecies = ?, animalYearofbirth = ?, animalCastrated = ?, animalCharacter = ? WHERE id = ?", [data.animalName, data.animalSpecies, data.animalYearofbirth, data.animalCastrated, data.animalCharacter, id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);

@@ -2,6 +2,8 @@ header {
     height: 75px;
     background-color: rgb(65, 135, 200);
     margin-bottom: 20px;
+    display: flex;
+    
 }
 
 header img {
@@ -13,4 +15,17 @@ header img {
 header h1 {
  font-size: 160%;
  position: relative;
+}
+
+body footer {
+    height: 25px;
+    background-color: rgb(65, 135, 200);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+body footer p {
+    text-align: center;
+    color: white;
 }

@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in items" :key="item.animal_id">
+        <tr v-for="item in items" :key="item.id">
           <td>{{ item.animalName }}</td>
           <td>{{ item.animalSpecies }}</td>
           <td>{{ item.animalYearofbirth }}</td>
@@ -23,13 +23,13 @@
           <td>{{ item.animalCharacter }}</td>
           <td class="has-text-centered">
             <router-link
-              :to="{ name: 'Edit', params: { id: item.animal_id } }"
+              :to="{ name: 'Edit', params: { id: item.id } }"
               class="button is-info is-small"
               >Edit</router-link
             >
             <a
               class="button is-danger is-small"
-              @click="deleteAnimal(item.animal_id)"
+              @click="deleteAnimal(item.id)"
               >Delete</a
             >
           </td>

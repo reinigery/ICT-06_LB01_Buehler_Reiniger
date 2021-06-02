@@ -87,16 +87,16 @@ export default {
   },
   methods: {
     // Get Animal By Id
-    async getAnimaltById() {
+    async getAnimalById() {
       try {
         const response = await axios.get(
           `http://localhost:5000/animals/${this.$route.params.id}`
         );
-        this.animalName = response.data.animal_name;
-        this.animalSpecies = response.data.animal_species;
-        this.animalYearofbirth = response.data.animal_yearofbirth;
-        this.animalCastrated = response.data.animal_castrated;
-        this.animalCharacter = response.data.animal_character;
+        this.animalName = response.data.animalName;
+        this.animalSpecies = response.data.animalSpecies;
+        this.animalYearofbirth = response.data.animalYearofbirth;
+        this.animalCastrated = response.data.animalCastrated;
+        this.animalCharacter = response.data.animalCharacter;
       } catch (err) {
         console.log(err);
       }

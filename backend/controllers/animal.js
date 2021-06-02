@@ -14,7 +14,7 @@ export const showAnimals = (req, res) => {
  
 // Get Single Animal 
 export const showAnimalById = (req, res) => {
-    getAnimaltById(req.params.id, (err, results) => {
+    getAnimalById(req.params.id, (err, results) => {
         if (err){
             res.send(err);
         }else{
