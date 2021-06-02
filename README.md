@@ -2,4 +2,4 @@
 
 ## Datenbank Konzept
 ### Lösungsidee
-Tierheim XY möchte auf ihrer Webseite Tiere anzeigen, die ein Heim suchen.  
+Tierheim Pfötli möchte auf ihrer Webseite Tiere anzeigen, die ein Heim suchen.  
