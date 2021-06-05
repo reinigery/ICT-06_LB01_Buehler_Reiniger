@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>console.sql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+console.sql</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">CREATE DATABASE </span><span class="s1">animal_db</span><span class="s0">;</span>
+<a name="l2"><span class="ln">2    </span></a><span class="s0">use </span><span class="s1">animal_db</span><span class="s0">;</span>
+<a name="l3"><span class="ln">3    </span></a>
+<a name="l4"><span class="ln">4    </span></a><span class="s0">CREATE TABLE </span><span class="s1">animals (</span>
+<a name="l5"><span class="ln">5    </span></a>    <span class="s1">id </span><span class="s0">INT PRIMARY KEY NOT NULL AUTO_INCREMENT,</span>
+<a name="l6"><span class="ln">6    </span></a>    <span class="s1">animalName </span><span class="s0">VARCHAR</span><span class="s1">(</span><span class="s2">100</span><span class="s1">)</span><span class="s0">,</span>
+<a name="l7"><span class="ln">7    </span></a>    <span class="s1">animalSpecies </span><span class="s0">VARCHAR</span><span class="s1">(</span><span class="s2">50</span><span class="s1">)</span><span class="s0">,</span>
+<a name="l8"><span class="ln">8    </span></a>    <span class="s1">animalYearofbirth </span><span class="s0">YEAR,</span>
+<a name="l9"><span class="ln">9    </span></a>    <span class="s1">animalCastrated </span><span class="s0">VARCHAR</span><span class="s1">(</span><span class="s2">5</span><span class="s1">)</span><span class="s0">,</span>
+<a name="l10"><span class="ln">10   </span></a>
+<a name="l11"><span class="ln">11   </span></a><span class="s0">use </span><span class="s1">animal_db</span><span class="s0">;</span>
+<a name="l12"><span class="ln">12   </span></a><span class="s0">SHOW tables;</span>
+<a name="l13"><span class="ln">13   </span></a><span class="s0">SELECT </span><span class="s1">* </span><span class="s0">FROM </span><span class="s1">animals</span><span class="s0">;</span>
+<a name="l14"><span class="ln">14   </span></a><span class="s0">DROP TABLE </span><span class="s1">animals</span><span class="s0">;</span>
+<a name="l15"><span class="ln">15   </span></a>
+<a name="l16"><span class="ln">16   </span></a><span class="s0">CREATE TABLE </span><span class="s1">animals(</span>
+<a name="l17"><span class="ln">17   </span></a>    <span class="s1">id                </span><span class="s0">INT PRIMARY KEY NOT NULL AUTO_INCREMENT,</span>
+<a name="l18"><span class="ln">18   </span></a>    <span class="s1">animalName        </span><span class="s0">VARCHAR</span><span class="s1">(</span><span class="s2">100</span><span class="s1">)</span><span class="s0">,</span>
+<a name="l19"><span class="ln">19   </span></a>    <span class="s1">animalSpecies     </span><span class="s0">VARCHAR</span><span class="s1">(</span><span class="s2">50</span><span class="s1">)</span><span class="s0">,</span>
+<a name="l20"><span class="ln">20   </span></a>    <span class="s1">animalYearofbirth </span><span class="s0">YEAR,</span>
+<a name="l21"><span class="ln">21   </span></a>    <span class="s1">animalCastrated   </span><span class="s0">VARCHAR</span><span class="s1">(</span><span class="s2">5</span><span class="s1">)</span><span class="s0">,</span>
+<a name="l22"><span class="ln">22   </span></a>    <span class="s1">animalCharacter   </span><span class="s0">VARCHAR</span><span class="s1">(</span><span class="s2">1000</span><span class="s1">)</span>
+<a name="l23"><span class="ln">23   </span></a><span class="s1">)</span><span class="s0">;</span>
+<a name="l24"><span class="ln">24   </span></a>
+<a name="l25"><span class="ln">25   </span></a><span class="s0">INSERT INTO </span><span class="s1">animals (animalName</span><span class="s0">, </span><span class="s1">animalSpecies</span><span class="s0">, </span><span class="s1">animalYearofbirth</span><span class="s0">, </span><span class="s1">animalCastrated</span><span class="s0">, </span><span class="s1">animalCharacter)</span>
+<a name="l26"><span class="ln">26   </span></a><span class="s0">VALUES </span><span class="s1">(</span><span class="s3">'Bello'</span><span class="s0">, </span><span class="s3">'dog'</span><span class="s0">, </span><span class="s3">'2021'</span><span class="s0">,</span><span class="s3">'yes'</span><span class="s0">, </span><span class="s3">'joly'</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l27"><span class="ln">27   </span></a>
+<a name="l28"><span class="ln">28   </span></a></pre>
+</body>
+</html>
